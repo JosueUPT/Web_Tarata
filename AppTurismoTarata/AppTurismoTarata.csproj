@@ -131,6 +131,7 @@
     <Content Include="Sources\assets\img\team\2.jpg" />
     <Content Include="Sources\assets\img\team\3.jpg" />
     <Content Include="Sources\assets\img\LogoTarata.svg" />
+    <Content Include="Sources\css\adminstyles.css" />
     <Content Include="Sources\css\custom.css" />
     <Content Include="Sources\css\styles.css" />
     <Content Include="Sources\js\scripts.js" />
@@ -138,25 +139,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RutasController.cs" />
+    <Compile Include="Filters\AdminFilters.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Middleware\RequestLoggingMiddleware.cs" />
-    <Compile Include="Models\actividades.cs" />
-    <Compile Include="Models\destinos.cs" />
     <Compile Include="Models\DetalleRuta.cs" />
-    <Compile Include="Models\eventos_especiales.cs" />
-    <Compile Include="Models\guias.cs" />
-    <Compile Include="Models\guia_actividad.cs" />
-    <Compile Include="Models\itinerarios.cs" />
-    <Compile Include="Models\itinerario_actividad.cs" />
-    <Compile Include="Models\multimedia.cs" />
-    <Compile Include="Models\reservas.cs" />
-    <Compile Include="Models\reseñas.cs" />
-    <Compile Include="Models\TarataModel.cs" />
-    <Compile Include="Models\usuarios.cs" />
+    <Compile Include="Models\HashHelper.cs" />
+    <Compile Include="Models\ResponseModel.cs" />
+    <Compile Include="Models\Rutas.cs" />
+    <Compile Include="Models\SessionHelper.cs" />
+    <Compile Include="Models\TarataApp.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +164,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Rutas\AccesoTarata.cshtml" />
+    <Content Include="Views\Rutas\Senderismo.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Tablas.cshtml" />
+    <Content Include="Views\Shared\_Dashboard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -175,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

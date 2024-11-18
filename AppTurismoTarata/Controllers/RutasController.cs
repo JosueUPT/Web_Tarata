@@ -9,6 +9,10 @@ namespace AppTurismoTarata.Controllers
     public class RutasController : Controller
     {
         List<DetalleRuta> lugares = new List<DetalleRuta>();
+
+
+        private DetalleRuta objLugar = new DetalleRuta();
+
         // GET: Rutas
         public ActionResult Index()
         {
@@ -17,43 +21,27 @@ namespace AppTurismoTarata.Controllers
 
         public ActionResult AccesoTarata()
         {
-            lugares.Add(new DetalleRuta
-            {
-                idDetalle = 1,
-                idRuta = 1,
-                nombre = "Plaza Coronel Gregorio Albarracin",
-                descripcion = "Esta plaza...",
-                costo = 10,
-                horario = "09:00 - 17:00"
-            });
-            lugares.Add(new DetalleRuta
-            {
-                idDetalle = 2,
-                idRuta = 1,
-                nombre = "Mercado",
-                descripcion = "Mercado...",
-                costo = 10,
-                horario = "09:00 - 17:00"
-            });
-            lugares.Add(new DetalleRuta
-            {
-                idDetalle = 3,
-                idRuta = 1,
-                nombre = "Templo San Benedicto",
-                descripcion = "Templo...",
-                costo = 10,
-                horario = "09:00 - 17:00"
-            });
-            lugares.Add(new DetalleRuta
-            {
-                idDetalle = 4,
-                idRuta = 1,
-                nombre = "Municipalidad Provincial de Tarata",
-                descripcion = "La municipalidad...",
-                costo = 10,
-                horario = "09:00 - 17:00"
-            });
-            return View(lugares);
+            // AccesoTarata corresponde a IdRuta = 1
+            return View(objLugar.ListarDetalleRutaPorId(1));
         }
+
+        public ActionResult Senderismo()
+        {
+            // Senderismo corresponde a IdRuta = 2
+            return View(objLugar.ListarDetalleRutaPorId(2));
+        }
+
+        public ActionResult Relax()
+        {
+            // Relax corresponde a IdRuta = 3
+            return View(objLugar.ListarDetalleRutaPorId(3));
+        }
+
+        public ActionResult DeportesExtremos()
+        {
+            // DeportesExtremos corresponde a IdRuta = 4
+            return View(objLugar.ListarDetalleRutaPorId(4));
+        }
+
     }
 }
